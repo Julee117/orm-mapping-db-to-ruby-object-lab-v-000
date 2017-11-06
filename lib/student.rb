@@ -72,7 +72,7 @@ class Student
 
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
-    end 
+    end
   end
 
   def self.students_below_12th_grade
@@ -103,6 +103,7 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10
+      ORDER BY students.id
       LIMIT 1
     SQL
 
